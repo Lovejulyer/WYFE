@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS单元作业</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><blockquote>
+  <p>网易云课堂 - - 微专业 - - 前端开发工程师 - - 《页面制作》</p>
+</blockquote>
+
+
+
+<h3 id="作业一已知html结构和效果图如下">作业一：已知HTML结构和效果图如下：</h3>
+
+<p><img src="http://img.blog.csdn.net/20160515050710348" alt="这里写图片描述" title=""></p>
+
+
+
+<pre class="prettyprint"><code class=" hljs applescript">&lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"parent"</span>&gt; 
+    &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"side"</span>&gt;侧栏&lt;/<span class="hljs-keyword">div</span>&gt;
+    &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"main"</span>&gt;主栏&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;/<span class="hljs-keyword">div</span>&gt;</code></pre>
+
+<p>要求如效果图中标注，且总体水平居中，两栏间距为10px，请写出这个两列布局的CSS，要求使用浮动布局方法，并需要清除浮动。</p>
+
+<p><strong>解答：</strong></p>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"UTF-8"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>作业一<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">style</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/css"</span>&gt;</span><span class="css">
+    *<span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"><span class="hljs-number">0</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"><span class="hljs-number">0</span></span></span>;<span class="hljs-rule">}</span></span>
+    <span class="hljs-class">.parent</span><span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">810</span>px</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">200</span>px</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"><span class="hljs-hexcolor">#FFF</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"><span class="hljs-number">0</span> auto</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value">center</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"><span class="hljs-number">200</span>px</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value">white</span></span>;
+    <span class="hljs-rule">}</span></span>
+    <span class="hljs-class">.side</span><span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">200</span>px</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">200</span>px</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"><span class="hljs-hexcolor">#FF0000</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">float</span>:<span class="hljs-value">left</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"><span class="hljs-number">10</span>px</span></span>;
+
+    <span class="hljs-rule">}</span></span>
+    <span class="hljs-class">.main</span><span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">600</span>px</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">200</span>px</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"><span class="hljs-hexcolor">#0000FF</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">float</span>:<span class="hljs-value">left</span></span>;
+    <span class="hljs-rule">}</span></span>
+    <span class="hljs-class">.clearfix</span><span class="hljs-pseudo">:after</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"><span class="hljs-string">''</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value">table</span></span>;<span class="hljs-rule"><span class="hljs-attribute">clear</span>:<span class="hljs-value">both</span></span>;<span class="hljs-rule">}</span></span>
+    <span class="hljs-class">.clearfix</span><span class="hljs-rules">{<span class="hljs-rule">*<span class="hljs-attribute">zoom</span>:<span class="hljs-value"><span class="hljs-number">1</span></span></span>;<span class="hljs-rule">}</span></span>           
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"parent clearfix"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"side"</span>&gt;</span>侧栏<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"main"</span>&gt;</span>主栏<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>  
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+<p><strong>实现效果：</strong></p>
+
+<p><img src="http://img.blog.csdn.net/20160515052240963" alt="这里写图片描述" title=""></p>
+
+<p><strong>CSS考察点：</strong></p>
+
+<ul>
+<li><p>总宽810px的设置</p></li>
+<li><p>总体水平居中布局</p></li>
+<li><p>侧栏200px宽度设置，主栏600px宽度设置</p></li>
+<li><p>侧栏和主栏的左右水平排列，侧栏和主栏之间有10px间距</p></li>
+<li><p>清除浮动实现</p></li>
+</ul>
+
+
+
+<h3 id="作业二有一个新闻标题效果如图">作业二：有一个新闻标题，效果如图，</h3>
+
+<p>标题宽度为200px，文字字体为宋体，加粗，文字大小为16px，颜色为黑色，行高为25px，要求单行显示并且超出时显示”…“，请按要求完成CSS。效果图：</p>
+
+<p><img src="http://img.blog.csdn.net/20160515052730453" alt="这里写图片描述" title=""></p>
+
+<p><strong>解答：</strong></p>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">title</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span>作业二<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
+     *<span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"><span class="hljs-number">0</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"><span class="hljs-number">0</span></span></span>;<span class="hljs-rule">}</span></span>
+     <span class="hljs-tag">h3</span><span class="hljs-class">.title_effect</span><span class="hljs-rules">{    
+     <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">200</span>px</span></span>;    
+     <span class="hljs-rule"><span class="hljs-attribute">font</span>:<span class="hljs-value">bold <span class="hljs-number">16</span>px/<span class="hljs-number">25</span>px <span class="hljs-string">"宋体"</span>,sans-serif</span></span>;    
+     <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"><span class="hljs-hexcolor">#000000</span></span></span>;    
+     <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"><span class="hljs-number">25</span>px</span></span>;    
+     <span class="hljs-rule"><span class="hljs-attribute">text-overflow</span>:<span class="hljs-value">ellipsis</span></span>;     
+     <span class="hljs-rule"><span class="hljs-attribute">white-space</span>:<span class="hljs-value">nowrap</span></span>;     
+     <span class="hljs-rule"><span class="hljs-attribute">overflow</span>:<span class="hljs-value">hidden</span></span>;
+    <span class="hljs-rule">}</span></span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>    
+        <span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"title_effect"</span>&gt;</span>标题文字标题文字标题文字标题文字标题文字标题文字<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+<p><strong>实现效果：</strong></p>
+
+<p><img src="http://img.blog.csdn.net/20160515053240498" alt="这里写图片描述" title=""></p>
+
+<p><strong>CSS考察点：</strong></p>
+
+<ul>
+<li><p>宽度设置</p></li>
+<li><p>字体设置</p></li>
+<li><p>单行显示设置</p></li>
+</ul>
+
+
+
+<h3 id="作业三一个幻灯片效果如图">作业三：一个幻灯片效果如图：</h3>
+
+<p><img src="http://img.blog.csdn.net/20160515053535733" alt="这里写图片描述" title=""></p>
+
+<p>已知结构如下：</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"slide"</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- 图片省略 --&gt;</span>
+    <span class="hljs-comment">&lt;!-- 以下是指示器 --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"pointer"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"current"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+<p>要求如效果图中标注，幻灯（slide）宽200px，高100px，指示器（pointer）在右下角，距离右边10px距离下边10px，指示器中的三个圆直径为10px，背景为黑色，间距为5px，当前选中项（current）为白色背景，请完成CSS，不需要兼容低版本IE。</p>
+
+<p><strong>解答：</strong></p>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml">    <span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">html</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">"en"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>CSS单元作业3<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
+            <span class="hljs-class">.container</span> <span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value">relative</span></span>;<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">200</span>px</span></span>;<span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">100</span>px</span></span>;<span class="hljs-rule"><span class="hljs-attribute">overflow-y</span>:<span class="hljs-value">hidden</span></span>;<span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-function">rgb(<span class="hljs-number">189</span>,<span class="hljs-number">215</span>,<span class="hljs-number">238</span>)</span></span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.container</span> <span class="hljs-tag">img</span><span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value">block</span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.container</span> <span class="hljs-class">.silder</span> <span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">100</span>%</span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.container</span> <span class="hljs-class">.silder</span> <span class="hljs-tag">img</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value">none</span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.container</span> <span class="hljs-class">.silder</span> <span class="hljs-tag">img</span><span class="hljs-pseudo">:first-child</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value">block</span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.container</span> <span class="hljs-class">.controls</span><span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value">absolute</span></span>;<span class="hljs-rule"><span class="hljs-attribute">bottom</span>:<span class="hljs-value"><span class="hljs-number">10</span>px</span></span>;<span class="hljs-rule"><span class="hljs-attribute">right</span>:<span class="hljs-value"><span class="hljs-number">5</span>px</span></span>;<span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"><span class="hljs-number">10</span>px</span></span>;<span class="hljs-rule"><span class="hljs-attribute">z-index</span>:<span class="hljs-value"><span class="hljs-number">99</span></span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.container</span> <span class="hljs-class">.controls</span> <span class="hljs-tag">i</span> <span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">list-style</span>:<span class="hljs-value">none outside none</span></span>; <span class="hljs-rule"><span class="hljs-attribute">float</span>:<span class="hljs-value"> left</span></span>; <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">10</span>px</span></span>; <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">20</span>px</span></span>; <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">10</span>px</span></span>;<span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">10</span>px</span></span>; <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> center</span></span>; <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> <span class="hljs-number">5</span>px</span></span>; <span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.container</span> <span class="hljs-class">.controls</span> <span class="hljs-tag">label</span> <span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">list-style</span>:<span class="hljs-value">none outside none</span></span>; <span class="hljs-rule"><span class="hljs-attribute">float</span>:<span class="hljs-value"> left</span></span>; <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">10</span>px</span></span>; <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">20</span>px</span></span>; <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">10</span>px</span></span>;<span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">10</span>px</span></span>; <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value">black</span></span>;<span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value">center</span></span>;<span class="hljs-rule"><span class="hljs-attribute">box-shadow</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-number">1</span>px <span class="hljs-number">3</span>px <span class="hljs-function">rgba(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0.12</span>)</span>, <span class="hljs-number">0</span> <span class="hljs-number">1</span>px <span class="hljs-number">2</span>px <span class="hljs-function">rgba(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0.24</span>)</span></span></span>; <span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.container</span> <span class="hljs-class">.controls</span> <span class="hljs-tag">label</span><span class="hljs-pseudo">:hover</span> <span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">cursor</span>:<span class="hljs-value">pointer</span></span>;<span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value">gray</span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.container</span> <span class="hljs-tag">input</span><span class="hljs-attr_selector">[type="radio"]</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> none</span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.controls</span> <span class="hljs-tag">ul</span> <span class="hljs-tag">li</span> <span class="hljs-id">#lbl1</span> <span class="hljs-rules">{ <span class="hljs-comment">/* background-color:white;*/</span>    <span class="hljs-rule">}</span></span>
+                <span class="hljs-tag">input</span><span class="hljs-attr_selector">[type="radio"]</span><span class="hljs-attr_selector">[id="index1"]</span><span class="hljs-pseudo">:checked</span> ~<span class="hljs-class">.controls</span> <span class="hljs-tag">i</span> <span class="hljs-id">#lbl1</span> <span class="hljs-rules">{
+                    <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value">white</span></span>;
+                <span class="hljs-rule">}</span></span>
+                <span class="hljs-tag">input</span><span class="hljs-attr_selector">[type="radio"]</span><span class="hljs-attr_selector">[id="index1"]</span><span class="hljs-pseudo">:checked</span> ~<span class="hljs-class">.silder</span> &gt;<span class="hljs-class">.index1</span> <span class="hljs-rules">{
+                    <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value">block</span></span>;
+                <span class="hljs-rule">}</span></span>
+                <span class="hljs-tag">input</span><span class="hljs-attr_selector">[type="radio"]</span><span class="hljs-attr_selector">[id="index1"]</span><span class="hljs-pseudo">:checked</span>  ~<span class="hljs-class">.silder</span> &gt;<span class="hljs-class">.index2</span>,<span class="hljs-class">.index3</span> <span class="hljs-rules">{
+                    <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value">none</span></span>;
+                <span class="hljs-rule">}</span></span>
+                <span class="hljs-tag">input</span><span class="hljs-attr_selector">[type="radio"]</span><span class="hljs-attr_selector">[id="index2"]</span><span class="hljs-pseudo">:checked</span>  ~<span class="hljs-class">.controls</span> <span class="hljs-tag">i</span> <span class="hljs-id">#lbl2</span> <span class="hljs-rules">{
+                    <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value">white</span></span>;
+                <span class="hljs-rule">}</span></span>
+                <span class="hljs-tag">input</span><span class="hljs-attr_selector">[type="radio"]</span><span class="hljs-attr_selector">[id="index2"]</span><span class="hljs-pseudo">:checked</span> ~<span class="hljs-class">.silder</span> &gt;<span class="hljs-class">.index2</span> <span class="hljs-rules">{
+                    <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value">block</span></span>;
+                <span class="hljs-rule">}</span></span>
+                <span class="hljs-tag">input</span><span class="hljs-attr_selector">[type="radio"]</span><span class="hljs-attr_selector">[id="index2"]</span><span class="hljs-pseudo">:checked</span>  ~<span class="hljs-class">.silder</span> &gt;<span class="hljs-class">.index1</span>,<span class="hljs-class">.index3</span> <span class="hljs-rules">{
+                    <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value">none</span></span>;
+                <span class="hljs-rule">}</span></span>
+                <span class="hljs-tag">input</span><span class="hljs-attr_selector">[type="radio"]</span><span class="hljs-attr_selector">[id="index3"]</span><span class="hljs-pseudo">:checked</span> ~<span class="hljs-class">.controls</span> <span class="hljs-tag">i</span> <span class="hljs-id">#lbl3</span> <span class="hljs-rules">{
+                    <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value">white</span></span>;
+                <span class="hljs-rule">}</span></span>
+                <span class="hljs-tag">input</span><span class="hljs-attr_selector">[type="radio"]</span><span class="hljs-attr_selector">[id="index3"]</span><span class="hljs-pseudo">:checked</span>  ~<span class="hljs-class">.silder</span> &gt;<span class="hljs-class">.index3</span> <span class="hljs-rules">{
+                    <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value">block</span></span>;
+                <span class="hljs-rule">}</span></span>
+                <span class="hljs-tag">input</span><span class="hljs-attr_selector">[type="radio"]</span><span class="hljs-attr_selector">[id="index3"]</span><span class="hljs-pseudo">:checked</span>  ~<span class="hljs-class">.silder</span> &gt;<span class="hljs-class">.index1</span>,<span class="hljs-class">.index3</span> <span class="hljs-rules">{
+                    <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value">none</span></span>;
+                <span class="hljs-rule">}</span></span>
+        </span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container"</span>&gt;</span>
+             <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"radio"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"silder"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"index1"</span> <span class="hljs-attribute">checked</span> /&gt;</span>
+             <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"radio"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"silder"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"index2"</span> /&gt;</span>
+             <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"radio"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"silder"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"index3"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"controls"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">i</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"index1"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"lbl1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">i</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"index2"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"lbl2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">i</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"index3"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"lbl3"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"silder"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"img1.png"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"图片1"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"index1"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"img1"</span> /&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"img2.jpg"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"图片2"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"index2"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"img2"</span> /&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"img3.jpg"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"图片3"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"index3"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"img3"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+<p><strong>实现效果：</strong></p>
+
+<p><img src="http://img.blog.csdn.net/20160515053840889" alt="这里写图片描述" title=""></p>
+
+<p><strong>CSS考察点：</strong></p>
+
+<ul>
+<li><p>幻灯宽高设置</p></li>
+<li><p>幻灯相对定位设置</p></li>
+<li><p>指示器绝对定位设置</p></li>
+<li><p>指示器距离右边10px设置，指示器距离下边10px设置</p></li>
+<li><p>三个圆圈设置（大小，水平排列，间距，背景色）</p></li>
+</ul></div></body>
+</html>

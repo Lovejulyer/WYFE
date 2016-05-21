@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>页面制作期末考试主观题</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><blockquote>
+  <p>网易云课堂 - - 微专业 - - 前端开发工程师 - - 《页面制作》</p>
+</blockquote>
+
+
+
+<h3 id="主观题一"><strong>主观题一：</strong></h3>
+
+<p>请按要求完成index.html（页面标题为“网易新闻“）和index.CSS的所有代码：</p>
+
+<p>效果图： <img src="http://img1.ph.126.net/4LaP8blCeopmwbRkHjyjPw==/6630287112443278270.png" alt="这里写图片描述" title=""></p>
+
+<p>有一则图片新闻，效果如上，要求如下：</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs avrasm">总体：左图右文，总宽度未知，图文之间间距<span class="hljs-number">15</span>px
+左图：图片地址假设为http://<span class="hljs-number">163.</span><span class="hljs-keyword">com</span>/<span class="hljs-built_in">x</span><span class="hljs-preprocessor">.jpg</span>，图片宽高均为<span class="hljs-number">100</span>px
+右文：字体为宋体，行高为<span class="hljs-number">25</span>px，最多显示<span class="hljs-number">4</span>行文字
+右文中的标题：标题要求单行显示并且超出时显示”…“，标题文字为粗体，大小为<span class="hljs-number">16</span>px，黑色
+右文中的段落：段落文字大小为<span class="hljs-number">14</span>px，颜色为<span class="hljs-preprocessor">#666</span></code></pre>
+
+<p><strong>解答：</strong></p>
+
+
+
+<pre class="prettyprint"><code class=" hljs css"><span class="hljs-tag">index</span><span class="hljs-class">.css</span>
+
+*<span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"><span class="hljs-number">0</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"><span class="hljs-number">0</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"><span class="hljs-number">0</span></span></span>;<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.news</span><span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value">center</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">420</span>px</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">100</span>px</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"><span class="hljs-number">20</span>px auto</span></span>;
+    <span class="hljs-rule">}</span></span>       
+<span class="hljs-class">.pic</span><span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"><span class="hljs-number">15</span>px</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">float</span>:<span class="hljs-value">left</span></span>;
+    <span class="hljs-rule">}</span></span>
+<span class="hljs-class">.art</span><span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"><span class="hljs-string">'宋体'</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"><span class="hljs-number">25</span>px</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">float</span>:<span class="hljs-value">left</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">70</span>%</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">100</span>px</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">overflow</span>:<span class="hljs-value">hidden</span></span>;
+    <span class="hljs-rule">}</span></span>
+<span class="hljs-class">.art</span> <span class="hljs-tag">h3</span><span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value">bloder</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"><span class="hljs-number">16</span>px</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"><span class="hljs-hexcolor">#000000</span></span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">text-overflow</span>:<span class="hljs-value">ellipsis</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">overflow</span>:<span class="hljs-value">hidden</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">white-space</span>:<span class="hljs-value">nowrap</span></span>;
+    <span class="hljs-rule">}</span></span>
+<span class="hljs-class">.art</span> <span class="hljs-tag">p</span><span class="hljs-rules">{
+        <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"><span class="hljs-number">14</span>px</span></span>;
+        <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"><span class="hljs-hexcolor">#666</span></span></span>;
+    <span class="hljs-rule">}</span></span></code></pre>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml">index.html
+
+<span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"UTF-8"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>网易新闻<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"index.css"</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/css"</span>&gt;</span>            
+    <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"news"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"pic"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://163.com/X.jpg"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"Image"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Image"</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"100"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"100"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"art"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>标题文字标题文字标题文字标题文字标题文字标题文字<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>标题文字标题文字标题文字标题文字标题文字标题文字标题文字标题文字标题文字标题文字标题文字标题文字标题文字标题文字标题文字标题文字标题文字标题文字<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+<p><strong>实现效果：</strong></p>
+
+<p><img src="http://img.blog.csdn.net/20160516010614450" alt="这里写图片描述" title=""></p>
+
+<p><strong>HTML和CSS考察点：</strong></p>
+
+<ul>
+<li><p>HTML语义：图片、标题、段落</p></li>
+<li><p>HTML中引入CSS，及总体文档结构</p></li>
+<li><p>图文设置（左右排列，间距，水平居中，右文自适应宽度）</p></li>
+<li><p>标题，段落文字设置（单行文字设置）</p></li>
+</ul>
+
+
+
+<h3 id="主观题二"><strong>主观题二</strong></h3>
+
+<p>已知登录表单效果图如下：</p>
+
+<p><img src="http://img1.ph.126.net/93NFBSnLdR27pwzpLA2Elg==/6608680609446322864.png" alt="这里写图片描述" title=""></p>
+
+<p>要求如下：</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs bash">总体：表单提交地址假设为“/login”
+标题：“登录网易通行证”为<span class="hljs-number">14</span>px的微软雅黑字体，加粗，行高<span class="hljs-number">16</span>px，距离第一个输入框<span class="hljs-number">15</span>px；
+左边文字：“用户名：”和“密码：”所在列列宽<span class="hljs-number">60</span>px，文字为<span class="hljs-number">12</span>px的宋体，文字与输入框垂直居中对齐；
+输入框：输入框宽<span class="hljs-number">200</span>px高<span class="hljs-number">20</span>px（含边框），边框粗细为<span class="hljs-number">1</span>px，颜色为<span class="hljs-comment">#ddd，两个输入框以及按钮之间间距为15px</span>
+按钮：按钮与输入框左对齐，按钮宽<span class="hljs-number">40</span>px高<span class="hljs-number">20</span>px，蓝底白字无边框，按钮文字为<span class="hljs-number">12</span>px的宋体且水平垂直都居中 </code></pre>
+
+<p><strong>解答：</strong></p>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"UTF-8"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>登录表单<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">style</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/css"</span>&gt;</span><span class="css">   
+            *<span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"><span class="hljs-number">0</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"><span class="hljs-number">0</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"><span class="hljs-number">0</span></span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-tag">form</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">260</span>px</span></span>;<span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"><span class="hljs-number">20</span>px auto</span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.signin</span> <span class="hljs-tag">legend</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">margin-bottom</span>:<span class="hljs-value"><span class="hljs-number">15</span>px</span></span>;<span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.signin</span> <span class="hljs-tag">legend</span> <span class="hljs-tag">span</span><span class="hljs-rules">{
+                <span class="hljs-rule"><span class="hljs-attribute">font</span>:<span class="hljs-value">bold <span class="hljs-number">14</span>px/<span class="hljs-number">16</span>px <span class="hljs-string">"Microsoft YaHei"</span></span></span>;  
+                <span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value">bold</span></span>;               
+            <span class="hljs-rule">}</span></span>           
+            <span class="hljs-class">.signin</span> <span class="hljs-tag">div</span><span class="hljs-rules">{
+                <span class="hljs-rule"><span class="hljs-attribute">overflow</span>:<span class="hljs-value">hidden</span></span>;
+                <span class="hljs-rule"><span class="hljs-attribute">margin-bottom</span>:<span class="hljs-value"><span class="hljs-number">15</span>px <span class="hljs-number">0</span></span></span>;               
+            <span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.signin</span> <span class="hljs-tag">div</span> <span class="hljs-tag">span</span><span class="hljs-rules">{
+                <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value">inline-block</span></span>;
+                <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">60</span>px</span></span>;
+                <span class="hljs-rule"><span class="hljs-attribute">font</span>:<span class="hljs-value"><span class="hljs-number">12</span>px/<span class="hljs-number">20</span>px <span class="hljs-string">"宋体"</span></span></span>; 
+                <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">20</span>px</span></span>;                
+            <span class="hljs-rule">}</span></span>
+            <span class="hljs-class">.signin</span> <span class="hljs-tag">div</span> <span class="hljs-tag">input</span><span class="hljs-rules">{
+                <span class="hljs-rule"><span class="hljs-attribute">box-sizing</span>:<span class="hljs-value">border-box</span></span>;
+                <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">200</span>px</span></span>;
+                <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">20</span>px</span></span>;
+                <span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"><span class="hljs-number">1</span>px solid <span class="hljs-hexcolor">#ddd</span></span></span>;
+                <span class="hljs-rule"><span class="hljs-attribute">margin-bottom</span>:<span class="hljs-value"><span class="hljs-number">15</span>px</span></span>;
+                <span class="hljs-rule"><span class="hljs-attribute">float</span>:<span class="hljs-value">right</span></span>;
+                <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"><span class="hljs-number">20</span>px</span></span>;
+            <span class="hljs-rule">}</span></span>           
+            <span class="hljs-class">.signin</span> <span class="hljs-tag">div</span> <span class="hljs-tag">input</span><span class="hljs-attr_selector">[type=submit]</span><span class="hljs-rules">{
+                <span class="hljs-rule"><span class="hljs-attribute">float</span>:<span class="hljs-value">left</span></span>;
+                <span class="hljs-rule"><span class="hljs-attribute">margin-left</span>:<span class="hljs-value"><span class="hljs-number">60</span>px</span></span>;               
+                <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">40</span>px</span></span>;
+                <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">20</span>px</span></span>;
+                <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value">blue</span></span>;
+                <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value">white</span></span>;
+                <span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"><span class="hljs-number">0</span></span></span>;
+                <span class="hljs-rule"><span class="hljs-attribute">font</span>:<span class="hljs-value"><span class="hljs-number">12</span>px <span class="hljs-string">"宋体"</span></span></span>;
+                <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"><span class="hljs-number">20</span>px</span></span>;
+            <span class="hljs-rule">}</span></span>
+        </span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>        
+    <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">"/login"</span> <span class="hljs-attribute">method</span>=<span class="hljs-value">"post"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"signin"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">fieldset</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">legend</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>登录网易通行证<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">legend</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"user_name"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>用户名:<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"user_name"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"myName"</span>/&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"uesr_password"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>密码:<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"password"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"uesr_password"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"myPassword"</span>/&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"保存"</span>  <span class="hljs-attribute">id</span>=<span class="hljs-value">"btn"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">fieldset</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+<p><strong>实现效果：</strong></p>
+
+<p><img src="http://img.blog.csdn.net/20160516035831159" alt="这里写图片描述" title=""></p>
+
+<p><strong>HTML和CSS考点：</strong></p>
+
+<ul>
+<li><p>HTML表单元素语义</p></li>
+<li><p>表单提交地址设置，标题设置，文字定位设置，输入框设置，按钮设置</p></li>
+<li><p>左右排列等设置</p></li>
+</ul>
+
+
+
+<h3 id="主观题三"><strong>主观题三：</strong></h3>
+
+<p>请完成以下效果图：</p>
+
+<p><img src="http://img2.ph.126.net/Fg7e8sizVCSOtvd15Mcc2A==/6630534502559575706.png" alt="这里写图片描述" title=""></p>
+
+<p><strong>解答：</strong></p>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>照片冲印价格详情<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>        
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">border</span>=<span class="hljs-value">"1"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">caption</span>&gt;</span>照片冲印价格详情<span class="hljs-tag">&lt;/<span class="hljs-title">caption</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">thead</span>&gt;</span><span class="hljs-comment">&lt;!--表格头部--&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">scope</span>=<span class="hljs-value">"col"</span> <span class="hljs-attribute">rowspan</span>=<span class="hljs-value">"2"</span>&gt;</span>相片尺寸<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>   
+        <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">scope</span>=<span class="hljs-value">"col"</span>&gt;</span>相纸（元/张）<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">scope</span>=<span class="hljs-value">"col"</span>&gt;</span>富士<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">scope</span>=<span class="hljs-value">"col"</span>&gt;</span>柯达<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">thead</span>&gt;</span>   
+    <span class="hljs-tag">&lt;<span class="hljs-title">tbody</span>&gt;</span><span class="hljs-comment">&lt;!--表格主体--&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">th</span>  <span class="hljs-attribute">scope</span>=<span class="hljs-value">"row"</span> &gt;</span>6寸<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>0.45<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>0.6<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">scope</span>=<span class="hljs-value">"row"</span>&gt;</span>10寸<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>3.89<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>5<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tbody</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tfoot</span>&gt;</span><span class="hljs-comment">&lt;!--表格尾部--&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">scope</span>=<span class="hljs-value">"row"</span> <span class="hljs-attribute">colspan</span>=<span class="hljs-value">"3"</span>&gt;</span>运费8元/单，满99免运费<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tfoot</span>&gt;</span>    
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>    
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+<p><strong>实现效果：</strong></p>
+
+<p><img src="http://img.blog.csdn.net/20160516040455777" alt="这里写图片描述" title=""></p>
+
+<p><strong>考察点：</strong></p>
+
+<p>caption、thead、th，rowspan、colspan、tbody、th，tfoot，colspan等知识点的考察。</p>
+
+
+
+<h3 id="主观题四"><strong>主观题四：</strong></h3>
+
+<p>请实现以下效果图：</p>
+
+<p><img src="http://img2.ph.126.net/gfAXD_0Lr333l50qtGXBzg==/1179098677459033883.png" alt="这里写图片描述" title=""></p>
+
+<p><strong>解答：</strong></p>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>下拉菜单<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">style</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/css"</span>&gt;</span><span class="css">
+         *<span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"><span class="hljs-number">0</span></span></span>;<span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"><span class="hljs-number">0</span></span></span>;<span class="hljs-rule">}</span></span>
+         <span class="hljs-tag">div</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"><span class="hljs-number">20</span>px auto</span></span>;<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">50</span>px</span></span>;<span class="hljs-rule">}</span></span>
+        <span class="hljs-class">.menu</span> <span class="hljs-tag">li</span><span class="hljs-rules">{
+                 <span class="hljs-rule"><span class="hljs-attribute">list-style</span>:<span class="hljs-value">none</span></span>;
+                 <span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"><span class="hljs-number">1</span>px solid <span class="hljs-hexcolor">#ddd</span></span></span>; 
+                 <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value">center</span></span>;              
+                <span class="hljs-rule">}</span></span>
+        <span class="hljs-class">.menu</span> <span class="hljs-tag">li</span> <span class="hljs-tag">a</span><span class="hljs-rules">{
+                 <span class="hljs-rule"><span class="hljs-attribute">text-decoration</span>:<span class="hljs-value">none</span></span>;
+                 <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"><span class="hljs-number">12</span>px</span></span>;
+                 <span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"><span class="hljs-string">"宋体"</span></span></span>;
+                 <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value">black</span></span>;   
+                 <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"><span class="hljs-number">30</span>px</span></span>;
+                <span class="hljs-rule">}</span></span>
+        <span class="hljs-class">.menu</span> &gt; <span class="hljs-tag">li</span><span class="hljs-rules">{
+                 <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">50</span>px</span></span>;
+                 <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">28</span>px</span></span>;
+                 <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"><span class="hljs-hexcolor">#eee</span></span></span>;
+                <span class="hljs-rule">}</span></span>
+        <span class="hljs-tag">li</span><span class="hljs-class">.sub</span> <span class="hljs-tag">ul</span><span class="hljs-rules">{
+                 <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value">none</span></span>;
+                 <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value">relative</span></span>;
+                <span class="hljs-rule">}</span></span>
+        <span class="hljs-tag">li</span><span class="hljs-class">.sub</span> <span class="hljs-tag">ul</span> <span class="hljs-tag">li</span><span class="hljs-rules">{
+                 <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value">white</span></span>;
+                 <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">30</span>px</span></span>;                   
+        <span class="hljs-rule">}</span></span>
+        <span class="hljs-tag">li</span><span class="hljs-class">.sub</span><span class="hljs-pseudo">:hover</span> &gt; <span class="hljs-tag">ul</span><span class="hljs-rules">{
+                 <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value">block</span></span>;
+                 <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value">absolute</span></span>;
+                 <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"><span class="hljs-number">51</span>px</span></span>;
+                 <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"><span class="hljs-number">50</span>%</span></span>;
+                 <span class="hljs-rule"><span class="hljs-attribute">margin-left</span>:<span class="hljs-value">-<span class="hljs-number">25</span>px</span></span>;                                  
+                <span class="hljs-rule">}</span></span>
+        <span class="hljs-tag">li</span><span class="hljs-class">.sub</span> <span class="hljs-tag">li</span><span class="hljs-pseudo">:hover</span><span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"><span class="hljs-hexcolor">#ddd</span></span></span>;<span class="hljs-rule">}</span></span>
+    </span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"menu"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sub"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>按钮<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"menus"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>下拉菜单项<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>下拉菜单项<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>下拉菜单项<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>下拉菜单项<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+<p><strong>实现效果：</strong></p>
+
+<p><img src="http://img.blog.csdn.net/20160516075548192" alt="这里写图片描述" title=""></p>
+
+<p><strong>考察点：</strong></p>
+
+<ul>
+<li>按钮 ，菜单项，定位，下拉菜单。</li>
+</ul></div></body>
+</html>
