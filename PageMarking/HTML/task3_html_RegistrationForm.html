@@ -1,0 +1,59 @@
+   <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>注册表单</title>
+        <style type="text/css">
+            #update_profile .input_col{ margin: 20px 0px; }
+            #update_profile .input_col input[type="text"]{ padding: 10px; }
+            #update_profile .input_col input[type="radio"], #update_profile .input_col input[type="checkbox"], #update_profile .input_col select{ font-size: 20px; }
+            #update_profile .input_col label{ font-size: 16px; margin-right: 10px; }
+            #update_profile .input_col label.sub_title{ margin-right: 20px; font-size: 18px; vertical-align: middle; }
+            #update_profile .input_col label.signature{ vertical-align: top; }
+            #update_profile textarea{  width: 300px; height: 80px; resize: none; border-color: rgb( 225, 225, 225); padding: 10px; }
+            #update_profile .button{ background: rgb(216, 83, 183); width: 124px; text-align: center; padding: 10px 0px; color: #ffffff; margin-left: 65px; }
+        </style>
+    </head>
+    <body>
+        <form id="update_profile" action="/update_profile.php" method="get" name="update">
+            <div class="input_col">
+                <label class="sub_title" for="portrait">头像</label>
+                <input type="file" name="portrait" id="portrait"></input>
+            </div>
+            <div class="input_col">
+                <label class="sub_title" for="nickname">昵称</label>
+                <input type="text" name="nickname" id="nickname"></input>
+            </div>
+            <div class="input_col">
+                <label class="sub_title" for="education">学历</label>
+                <select name="education" id="education">
+                    <option value="college" selected="selected">大专</option>
+                    <option value="bachelor">本科</option>
+                </select>
+            </div>
+            <div class="input_col">
+                <label class="sub_title">性别</label>
+                <input type="radio" checked="checked" name="sex" value="male" id="male"></input>
+                <label for="male">男</label>
+                <input type="radio" name="sex" value="female" id="female"></input>
+                <label for="female">女</label>
+            </div>
+            <div class="input_col">
+                <label class="sub_title">爱好</label>
+                <input type="checkbox" name="hobby" value="film" id="film" checked="checked"></input>
+                <label for="film">电影</label>
+                <input type="checkbox" name="hobby" value="photography" id="photography"></input>
+                <label for="photography">摄影</label>
+                <input type="checkbox" name="hobby" value="music" id="music"></input>
+                <label for="music">音乐</label>
+                <input type="checkbox" name="hobby" value="reading" id="reading" checked="checked"></input>
+                <label for="reading">阅读</label>
+            </div>
+            <div class="input_col">
+                <label class="sub_title signature" for="signature">签名</label>
+                <textarea id="signature"></textarea>
+            </div>
+            <div class="button">保&nbsp;存</div>                                 
+        </form>
+    </body>
+    </html>
